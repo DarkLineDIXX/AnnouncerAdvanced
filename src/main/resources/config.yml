@@ -1,0 +1,40 @@
+templates:
+  welcome:
+    text: "<gradient:gold:dark_orange>⚡ Добро пожаловать, {player}!</gradient>\n<white>Приятной игры!"
+    type: chat
+    time: 4
+    enabled: true
+    audience: all
+  rare-ore:
+    text: "<rainbow>Игрок {player} нашёл редкую руду!</rainbow>"
+    type: actionbar
+    time: 3
+    enabled: true
+    audience: all
+  dragon-kill:
+    text: "<gradient:#ff0000:#00ff00>Дракон повержен!</gradient>\n<gold>Поздравляем!"
+    type: all
+    time: 6
+    enabled: true
+    audience: all
+
+# таймеры
+timers:
+  - template: welcome
+    interval: 600
+    enabled: true
+
+# события
+events:
+  player-death:
+    enabled: true
+    template: welcome
+    mode: title
+  rare-ore:
+    enabled: true
+    template: rare-ore
+    mode: actionbar
+  boss-kill:
+    enabled: true
+    template: dragon-kill
+    mode: all
