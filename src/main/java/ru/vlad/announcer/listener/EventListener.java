@@ -2,6 +2,7 @@ package ru.vlad.announcer.listener;
 
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -34,7 +35,10 @@ public class EventListener implements Listener {
         if (e.getEntityType() == EntityType.PLAYER) {
             if (!plugin.getConfig().getBoolean("events.player-death.enabled", true)) return;
             String tpl = plugin.getConfig().getString("events.player-death.template", "player-death");
-            templates.broadcastTemplate(tpl, plugin.getConfig().getString("events.player-death.mode","all"), e.getEntity());
+            
+            // Здесь была ошибка. Мы явно приводим тип LivingEntity к Player.
+            Player deadPlayer = (Player) e.getEntity();
+            templates.broadcastTemplate(tpl, plugin.getConfig().getString("events.player-death.mode","all"), deadPlayer);
             return; // Чтобы не проверять другие условия, если это игрок
         }
 
