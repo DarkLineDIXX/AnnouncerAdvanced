@@ -8,6 +8,9 @@ import ru.vlad.announcer.AnnouncerPlugin;
 import ru.vlad.announcer.manager.GUIManager;
 import ru.vlad.announcer.manager.TemplateManager;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 public class AnnounceCommand implements CommandExecutor {
     private final AnnouncerPlugin plugin;
     private final TemplateManager templates;
@@ -29,7 +32,9 @@ public class AnnounceCommand implements CommandExecutor {
         if (!sender.hasPermission("announcer.use") && !sender.isOp()) { sender.sendMessage("Нет прав"); return true; }
         if (args.length == 0) {
             sender.sendMessage("Использование: /announce <шаблон> [chat|actionbar|title|all]");
-            sender.sendMessage("Шаблоны: " + String.join(", ", templates.ids()));
+            // Получаем Set<String> с идентификаторами
+            Set<String> ids = templates.ids();
+            sender.sendMessage("Шаблоны: " + String.join(", ", ids));
             return true;
         }
         String id = args[0]; String mode = args.length>1?args[1]:"all";
