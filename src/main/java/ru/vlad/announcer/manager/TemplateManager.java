@@ -2,7 +2,7 @@ package ru.vlad.announcer.manager;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.title.Title; // Эту строку нужно было изменить
+import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
@@ -14,12 +14,7 @@ import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-public java.util.Set<String> ids() {
-    return templates.keySet();
-}
-
-public class TemplateManager {
+public class TemplateManager { // <-- Эта строка должна быть на месте
     private final AnnouncerPlugin plugin;
     private final MiniMessage mm = MiniMessage.miniMessage();
     private final LinkedHashMap<String, Template> templates = new LinkedHashMap<>();
@@ -44,6 +39,9 @@ public class TemplateManager {
 
     public Collection<Template> list() { return templates.values(); }
     public Template get(String id) { return templates.get(id.toLowerCase(Locale.ROOT)); }
+
+    // Добавленный ранее метод
+    public Set<String> ids() { return templates.keySet(); }
 
     public void addOrUpdate(String id, String text, String type, int time, boolean enabled, String audience) {
         templates.put(id.toLowerCase(Locale.ROOT), new Template(id.toLowerCase(Locale.ROOT), text, type, time, enabled, audience));
