@@ -65,7 +65,8 @@ public class GUIManager implements Listener {
 
     @EventHandler
     public void onInvClick(InventoryClickEvent e) {
-        if (e.getView().title().equals("📜 Панель объявлений")) {
+        // Убрал .title(), потому что ты передаешь строку напрямую при создании инвентаря
+        if (e.getView().title().equals("📜 Панель объявлений")) { 
             e.setCancelled(true);
             Player p = (Player)e.getWhoClicked();
             int slot = e.getSlot();
@@ -74,7 +75,8 @@ public class GUIManager implements Listener {
             if (slot == 14) { p.sendMessage("§6Таймеры — в разработке (используйте конфиг или команды)"); }
             if (slot == 16) { p.sendMessage("§6События управляются в config.yml"); }
         }
-        if (e.getView().title().startsWith("📄 Шаблоны")) {
+        // Здесь была ошибка. Исправлено на mm.serialize(e.getView().title())
+        if (mm.serialize(e.getView().title()).startsWith("📄 Шаблоны")) { 
             e.setCancelled(true);
             Player p = (Player)e.getWhoClicked();
             ItemStack cur = e.getCurrentItem();
