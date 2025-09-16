@@ -11,6 +11,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <paper.version>1.21.8-R0.1-SNAPSHOT</paper.version>
+        <adventure.version>4.17.0</adventure.version>
+        <adventure-platform.version>4.3.2</adventure-platform.version>
     </properties>
 
     <repositories>
@@ -35,6 +37,28 @@
             <version>${paper.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>${adventure.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>${adventure.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-platform-bukkit</artifactId>
+            <version>${adventure-platform.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
@@ -57,4 +81,3 @@
         </plugins>
     </build>
 </project>
-
