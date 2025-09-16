@@ -14,6 +14,11 @@ import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
+public java.util.Set<String> ids() {
+    return templates.keySet();
+}
+
 public class TemplateManager {
     private final AnnouncerPlugin plugin;
     private final MiniMessage mm = MiniMessage.miniMessage();
