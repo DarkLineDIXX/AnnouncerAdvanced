@@ -2,7 +2,7 @@ package ru.vlad.announcer.manager;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.title.Title;
+import net.kyori.adventure.title.Title; // Эту строку нужно было изменить
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
