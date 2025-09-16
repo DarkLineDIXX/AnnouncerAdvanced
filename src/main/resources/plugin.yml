@@ -1,0 +1,19 @@
+name: AnnouncerAdvanced
+main: ru.vlad.announcer.AnnouncerPlugin
+version: 1.0.0
+api-version: 1.21
+author: Vlad
+commands:
+  announce:
+    description: Отправить шаблон /announce <name> [mode]
+  announcegui:
+    description: Открыть GUI панели
+  announcereload:
+    description: Перезагрузить шаблоны
+permissions:
+  announcer.use:
+    default: op
+  announcer.gui:
+    default: op
+  announcer.reload:
+    default: op
