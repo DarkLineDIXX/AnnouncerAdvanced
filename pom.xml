@@ -13,8 +13,6 @@
         <paper.version>1.21.8-R0.1-SNAPSHOT</paper.version>
         <adventure.version>4.17.0</adventure.version>
         <adventure-platform.version>4.3.2</adventure-platform.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <repositories>
