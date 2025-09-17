@@ -44,7 +44,7 @@
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
             <version>${adventure.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -80,7 +80,7 @@
                     <target>21</target>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
