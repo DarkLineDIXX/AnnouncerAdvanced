@@ -94,12 +94,11 @@
                         <configuration>
                             <relocations>
                                 <relocation>
-                                    <pattern>net.kyori.adventure</pattern>
-                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori.adventure</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>net.kyori.examination</pattern>
-                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori.examination</shadedPattern>
+                                    <pattern>net.kyori</pattern>
+                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori</shadedPattern>
+                                    <excludes>
+                                        <exclude>net.kyori.adventure.platform.**</exclude>
+                                    </excludes>
                                 </relocation>
                             </relocations>
                         </configuration>
