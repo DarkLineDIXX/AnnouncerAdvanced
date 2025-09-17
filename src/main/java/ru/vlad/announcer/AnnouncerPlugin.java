@@ -18,7 +18,7 @@ public final class AnnouncerPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        audiences = getAudiences();
+        audiences = BukkitAudiences.create(this);
 
         saveDefaultConfig();
 
@@ -50,15 +50,6 @@ public final class AnnouncerPlugin extends JavaPlugin {
         if (audiences != null) { audiences.close(); audiences = null; }
         timerManager.cancelAll();
         instance = null;
-    }
-
-    private BukkitAudiences getAudiences() {
-        try {
-            return (BukkitAudiences) Class.forName("io.papermc.paper.adventure.PaperAudiences").getMethod("of", JavaPlugin.class).invoke(null, this);
-        } catch (Exception e) {
-            getLogger().severe("Не удалось получить экземпляр BukkitAudiences: " + e.getMessage());
-            return null;
-        }
     }
 
     public static AnnouncerPlugin getInstance() { return instance; }
