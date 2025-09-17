@@ -58,7 +58,7 @@
             <groupId>net.kyori</groupId>
             <artifactId>adventure-platform-bukkit</artifactId>
             <version>${adventure-platform.version}</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -80,7 +80,7 @@
                     <target>21</target>
                 </configuration>
             </plugin>
-
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -94,8 +94,12 @@
                         <configuration>
                             <relocations>
                                 <relocation>
-                                    <pattern>net.kyori</pattern>
-                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori</shadedPattern>
+                                    <pattern>net.kyori.adventure</pattern>
+                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori.adventure</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>net.kyori.examination</pattern>
+                                    <shadedPattern>ru.vlad.announcer.libs.net.kyori.examination</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
